@@ -1,4 +1,4 @@
-<div data-v-5e9078c0="" data-v-b06dc010="" class="QuestionsList"><div data-v-5e9078c0=""><h1 data-v-5e9078c0="">
+<div data-v-5e9078c0=""><h1 data-v-5e9078c0="">
       Top 43 Linked Lists interview
       questions and answers in 2021.
     </h1> <p data-v-5e9078c0="" align="center"><a data-v-5e9078c0="" href="https://devinterview.io/"><img data-v-5e9078c0="" src="https://source.unsplash.com/collection/52661698/700x350"></a></p> <p data-v-5e9078c0="">
@@ -93,4 +93,4 @@
     Thanks 🙌 for reading and good luck on your next tech interview!
     <br data-v-5e9078c0="">
     Explore 3800+ dev interview question here 👉
-    <a data-v-5e9078c0="" href="https://devinterview.io/">Devinterview.io</a></div> <!----></div>
+    <a data-v-5e9078c0="" href="https://devinterview.io/">Devinterview.io</a></div>
