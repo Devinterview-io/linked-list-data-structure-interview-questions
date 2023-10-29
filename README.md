@@ -4,7 +4,7 @@
 
 Check out our carefully selected list of **basic** and **advanced** Linked Lists questions and answers to be well-prepared for your tech interviews in 2024.
 
-![Linked Lists Decorative Image](https://storage.googleapis.com/dev-stack-app.appspot.com/blogImg/linkedLists.png?GoogleAccessId=firebase-adminsdk-bgeaf%40dev-stack-app.iam.gserviceaccount.com&Expires=1698606297&Signature=akC9z1kUeBAHKM0LlapWAQ72dXGoFBk4eiUyOlhwMF0pnPtTkkZpuApZc8yELaF16Sew34%2FfbpzOpczbQSBFqY2IPHB5QNpA5oqbEvWqOnT1IybvZBPD0LHxQO3pkt4HNX3aD1tKQ5umJlyIejWm4xpc6vFhL7EnfAfpsb%2B6pasDhECpwmt1GcYsl8%2FqMdK7tMOoEbIeX8Gqi47DqrtVSmmxtfQJ9O5rp1GutlpunTYrw2gzxiqJLQsoS6VyizCHxoRmReCJSeEvl2XOdIXI6KfR8BG66QwISLsGupn6PhY8Dcg9lsjR85JzbMQfP0vWLsxQyLyzX99bvKYQYWDKyQ%3D%3D)
+![Linked Lists Decorative Image](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/blogImg%2FlinkedLists.png?alt=media&token=44158070-9f81-4d91-b9eb-bd1f99a71dde&_gl=1*1ec21zo*_ga*OTYzMjY5NTkwLjE2ODg4NDM4Njg.*_ga_CW55HF8NVT*MTY5ODYwNTk1NS4xOTAuMS4xNjk4NjA3MTQ5LjYwLjAuMA..)
 
 👉🏼 You can also find all answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
