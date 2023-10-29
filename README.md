@@ -1,958 +1,664 @@
-<div data-v-5e9078c0="">
+# ⚫ Linked Lists in Tech Interviews 2024: 31 Must-Know Questions & Answers
 
-# Top 43 Linked Lists interview questions and answers in 2021.
+**Linked Lists** are linear data structures where elements are stored in nodes, and each node points to the next node in the sequence. Unlike arrays, they allow for efficient insertions and deletions in the middle of the list. In coding interviews, questions about linked lists test a candidate's grasp on **pointer manipulation** and understanding of **sequential data storage**.
 
-[![](https://source.unsplash.com/collection/52661698/700x350)](https://devinterview.io/)
+Check out our carefully selected list of **basic** and **advanced** Linked Lists questions and answers to be well-prepared for your tech interviews in 2024.
 
-You can check all 43 Linked Lists interview questions here 👉 https://devinterview.io/data/linkedLists-interview-questions
+![Linked Lists Decorative Image](https://storage.googleapis.com/dev-stack-app.appspot.com/blogImg/linkedLists.png?GoogleAccessId=firebase-adminsdk-bgeaf%40dev-stack-app.iam.gserviceaccount.com&Expires=1698606297&Signature=akC9z1kUeBAHKM0LlapWAQ72dXGoFBk4eiUyOlhwMF0pnPtTkkZpuApZc8yELaF16Sew34%2FfbpzOpczbQSBFqY2IPHB5QNpA5oqbEvWqOnT1IybvZBPD0LHxQO3pkt4HNX3aD1tKQ5umJlyIejWm4xpc6vFhL7EnfAfpsb%2B6pasDhECpwmt1GcYsl8%2FqMdK7tMOoEbIeX8Gqi47DqrtVSmmxtfQJ9O5rp1GutlpunTYrw2gzxiqJLQsoS6VyizCHxoRmReCJSeEvl2XOdIXI6KfR8BG66QwISLsGupn6PhY8Dcg9lsjR85JzbMQfP0vWLsxQyLyzX99bvKYQYWDKyQ%3D%3D)
 
-<div data-v-5e9078c0="" class="unit">
+👉🏼 You can also find all answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div>
+---
 
-## 🔹 1\. Name some advantages of Linked List
+## 🔹 1. What is a _Linked List_?
 
-</div>
+### Answer
 
-<div>
+A **Linked List** is a dynamic data structure ideal for fast insertions and deletions. Unlike arrays, its elements aren't stored contiguously but are linked via pointers.
 
-### Answer:
+### Anatomy of a Linked List
 
-<div class="answer">
+A Linked List is a collection of **nodes**, each having:
+- **Data**: The stored value.
+- **Next Pointer**: A reference to the next node.
 
-<div>
+The list starts with a **Head** node and ends with a node having a **null** `Next` pointer.
 
-<div>
+### Visual Representation
 
-<div class="AnswerBody">
+![Linked List](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/linked-lists%2Fsingly-linked-list.svg?alt=media&token=c6e2ad4f-e2d4-4977-a215-6253e71b6040)
 
-There are some:
+### Key Features
 
-*   Linked Lists are **Dynamic Data Structure** - it can grow and shrink at runtime by allocating and deallocating memory. So there is no need to give initial size of linked list.
-*   Insertion and Deletion are **simple to implement** - Unlike array here we don’t have to shift elements after insertion or deletion of an element. In linked list we just have to update the address present in next pointer of a node.
-*   **Efficient Memory Allocation/No Memory Wastage** - In case of array there is lot of memory wastage, like if we declare an array of size 10 and store only 6 elements in it then space of 4 elements are wasted. There is no such problem in linked list as memory is allocated only when required.
+- **Dynamic Size**: Adapts to data volume.
+- **Non-Contiguous Memory**: Flexibility in storage.
+- **Fast Insertions/Deletions**: Limited pointer adjustments needed.
 
-</div>
+### Types of Linked Lists
 
-</div>
+1. **Singly Linked List**: Each node has a single pointer to the next node. Traversal is unidirectional: from head to tail.
+![Singly Linked List](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/linked-lists%2Fsingly-linked-list.svg?alt=media&token=c6e2ad4f-e2d4-4977-a215-6253e71b6040)
+2. **Doubly Linked List**: Each node have two pointers: one pointing to the next node and another to the previous node. This allows for bidirectional traversal.
+![Doubly Linked List](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/linked-lists%2Fdoubly-linked-list.svg?alt=media&token=5e14dad3-c42a-43aa-99ff-940ab1d9cc3d)
+3. **Circular Linked List**: Like a singly linked list, but the tail node points back to the head, forming a loop.
+![Circular Linked List](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/linked-lists%2Fcircular-linked-list.svg?alt=media&token=b3b96bc7-3b16-4d07-978f-e4774a048ee1)
+4. **Multi-level Linked List**: This specialized type has nodes with multiple pointers, each pointing to different nodes. It's often used in advanced data structures like multi-level caches.
+![Multi-level Linked List](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/linked-lists%2Fmulti-level-linked-list.svg?alt=media&token=967af5cf-8a95-4c05-a8fe-fb70f2b7ea57)
 
-<div class="row my-2">
+### Common Operations and Time Complexity
 
-<div><span>_Source:_ <span>[www.thecrazyprogrammer.com](https://www.thecrazyprogrammer.com/2016/11/advantages-disadvantages-linked-list.html "Name some advantages of Linked List Interview Questions Source To Answer")</span></span>   </div>
+- **Traversal**: Scan through nodes — $O(n)$.
+- **Insertion at the Beginning**: Add a node at the start — $O(1)$.
+- **Insertion (other cases)/Deletion**: Add or remove nodes elsewhere in the list — $O(n)$.
+- **Search**: Locate specific nodes — $O(n)$.
+- **Sorting**: Order or organize nodes in the list. Commonly-used algorithms for linked lists like merge sort have a time complexity of $O(n \log n)$.
+- **Merging**: Combine two lists — $O(n)$ where $n$ is the total number of nodes in both lists.
+- **Reversal**: Flip node order — $O(n)$.
 
-</div>
+### Code Example: Singly Linked List
 
-</div>
+Here is the Python code:
 
-</div>
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-</div>
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-</div>
+    def insert(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+        else:
+            last_node = self.head
+            while last_node.next:
+                last_node = last_node.next
+            last_node.next = new_node
 
-<div data-v-5e9078c0="" class="unit">
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.next
 
-<div>
+# Usage
+my_list = LinkedList()
+my_list.insert(1)
+my_list.insert(2)
+my_list.insert(3)
+my_list.display()
 
-## 🔹 2\. Define Linked List
+# Output:
+# 1
+# 2
+# 3
+```
 
-</div>
+---
 
-<div>
+## 🔹 2. What are some real-life _Use Cases_ of _Linked Lists_?
 
-### Answer:
+### Answer
 
-<div class="answer">
+**Linked lists** are widely used in real-world applications for their advantages in dynamic memory management and data manipulation.
 
-<div>
+### Practical Applications
 
-<div>
+#### Operating Systems
 
-<div class="AnswerBody">
+- **Task Scheduling**: Linked lists efficiently manage queues of tasks awaiting execution.
+- **Memory Management**: They facilitate dynamic memory allocation, especially useful in applications like memory pool management.
 
-A **linked list** is a linear data structure where each element is a separate object. Each element (we will call it a **node**) of a list is comprising of two items - the **data** and a **reference (pointer)** to the next node. The last node has a reference to **null**. The entry point into a linked list is called the **head** of the list. It should be noted that _head is not a separate node,_ but the reference to the first node. If the list is empty then the head is a null reference.
+#### Text Editors
 
-</div>
+- **Undo/Redo Functionality**: Editors maintain a stack of changes using linked lists, enabling the undo and redo functionalities.
 
-</div>
+#### Music Players
 
-<div class="row my-2">
+- **Playlists**: Linked lists offer flexibility in managing playlists, allowing for the easy addition, deletion, and navigation of tracks.
 
-<div><span>_Source:_ <span>[www.cs.cmu.edu](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html "Define Linked List Interview Questions Source To Answer")</span></span>   </div>
+#### Web Browsers
 
-</div>
+- **Browser History**: Linked lists, especially doubly linked ones, are instrumental in navigating web page histories, permitting both forward and backward traversal.
 
-</div>
+#### Compilers
 
-</div>
+- **Symbol Tables**: Compilers employ linked lists to manage tables containing variable and function identifiers. This provides scoped access to these identifiers during different stages of compilation.
 
-</div>
+#### Database Management Systems
 
-</div>
+- **Transient Storage Structures**: While core storage might use trees or hash indexes, linked lists can serve auxiliary roles, especially in in-memory databases.
 
-<div data-v-5e9078c0="" class="unit">
+#### Artificial Intelligence and Machine Learning
 
-<div>
+- **Graph Representation**: Algorithms requiring graph representations often utilize adjacency lists, essentially arrays of linked lists, to depict vertices and edges.
 
-## 🔹 3\. Name some disadvantages of Linked Lists?
+#### Caching Algorithms
 
-</div>
+- **LRU Cache**: Linked lists, particularly doubly linked ones, play a pivotal role in the Least Recently Used (LRU) caching algorithms to determine which items to replace.
 
-<div>
+#### Networking
 
-### Answer:
+- **Packet Management**: In networking scenarios, linked lists help manage queues of data packets awaiting transmission.
 
-<div class="answer">
+#### Gaming
 
-<div>
+- **Character Inventory**: In role-playing games, a character's inventory, where items are added and removed frequently, can be managed using linked lists.
 
-<div>
+---
 
-<div class="AnswerBody">
+## 🔹 3. What are some pros and cons of _Linked List_ compared to _Arrays_?
 
-Few disadvantages of linked lists are :
+### Answer
 
-*   They use more memory than arrays because of the storage used by their pointers.
-*   Difficulties arise in linked lists when it comes to reverse traversing. For instance, singly linked lists are cumbersome to navigate backwards and while doubly linked lists are somewhat easier to read, memory is wasted in allocating space for a back-pointer.
-*   Nodes in a linked list must be read in order from the beginning as linked lists are inherently sequential access.
-*   Random access has linear time.
-*   Nodes are stored incontiguously (no or poor cache locality), greatly increasing the time required to access individual elements within the list, especially with a CPU cache.
-*   If the link to list's node is accidentally destroyed then the chances of data loss after the destruction point is huge. Data recovery is not possible.
-*   Search is linear versus logarithmic for sorted arrays and binary search trees.
-*   Different amount of time is required to access each element.
-*   Not easy to sort the elements stored in the linear linked list.
+Let's look at the pros and cons of using **linked lists** compared to **arrays**.
 
-</div>
+### Advantages of Linked Lists
 
-</div>
+- **Dynamic Size**: Linked lists naturally adjust to changing sizes, while arrays are fixed-sized. Dynamic arrays auto-resize but can lag in efficiency during frequent mid-list insertions or deletions.
 
-<div class="row my-2">
+- **Efficient Insertions/Deletions**: Insertions and deletions in linked lists only require a few pointer adjustments, whereas arrays may need shifting of elements.
 
-<div><span>_Source:_ <span>[www.quora.com](https://www.quora.com/What-are-the-disadvantages-of-linked-lists "Name some disadvantages of Linked Lists? Interview Questions Source To Answer")</span></span>   </div>
+- **Flexibility in Size**: Memory for nodes in linked lists is allocated or released as needed, potentially reducing memory wastage.
 
-</div>
+- **Merging and Splitting**: It's simpler to merge or split linked lists.
 
-</div>
+### Disadvantages of Linked Lists
 
-</div>
+- **Memory Overhead**: Each node has overhead due to data and a pointer, using more memory than arrays for the same number of elements.
 
-</div>
+- **Sequential Access**: Linked lists only allow sequential access, unlike arrays that support direct indexing.
 
-</div>
+- **Cache Inefficiency**: Nodes might be scattered in memory, leading to cache misses.
 
-<div data-v-5e9078c0="" class="unit">
+- **No Random Access**: Element retrieval might require full list traversal, whereas arrays offer constant-time access.
 
-<div>
+- **Data Integrity**: If a node's link breaks, subsequent nodes are lost.
 
-## 🔹 4\. What is a cycle/loop in the singly-linked list?
+- **Search Efficiency**: Requires linear scans, which can be slower than searches in sorted arrays or trees.
 
-</div>
+- **Sorting**: Certain sorting algorithms, like QuickSort, are less efficient with linked lists than with arrays.
 
-<div>
 
-### Answer:
+---
 
-<div class="answer">
+## 🔹 4. When is _Doubly Linked List_ more efficient than _Singly Linked List_?
 
-<div>
+### Answer
 
-<div>
+**Doubly linked lists** offer advantages in specific use-cases but use more memory and may require more complex thread-safety
 
-<div class="AnswerBody">
+### Key Efficiency Differences
 
-A **cycle/loop** occurs when a node’s next points _back_ to a _previous node_ in the list. The linked list is no longer linear with a beginning and end—instead, it cycles through a loop of nodes.
+- **Deletion**: If only the node to be deleted is known, doubly linked lists can delete it in $O(1)$ time, whereas singly linked lists may take up to $O(n)$ to find the prior node.
 
-</div>
+- **Tail Operations**: In doubly linked lists, tail-related tasks are $O(1)$. For singly linked lists without a tail pointer, these are $O(n)$.
 
-</div>
+### Practical Use-Cases
 
-<div class="row my-2">
+- **Cache Implementations**: Doubly linked lists are ideal due to quick bidirectional insertion and deletion.
 
-<div><span>_Source:_ <span>[www.interviewcake.com](https://www.interviewcake.com/question/java/linked-list-cycles "What is a cycle/loop in the singly-linked list? Interview Questions Source To Answer")</span></span>   </div>
+- **Text Editors and Undo/Redo**: The bidirectional capabilities make doubly linked lists more efficient for these functions.
 
-</div>
+---
 
-</div>
+## 🔹 5. Compare _Array-based_ vs _Linked List_ stack implementations.
 
-</div>
+### Answer
 
-</div>
+**Array-based stacks** excel in time efficiency and direct element access. In contrast, **linked list stacks** are preferable for dynamic sizing and easy insertions or deletions.
 
-</div>
+### Common Features
 
-<div data-v-5e9078c0="" class="unit">
+- **Speed of Operations**: Both `pop` and `push` are $O(1)$ operations.
+- **Memory Use**: Both have $O(n)$ space complexity.
+- **Flexibility**: Both can adapt their sizes, but their resizing strategies differ.
 
-<div>
+### Key Distinctions
 
-## 🔹 5\. What are some types of Linked List?
+#### Array-Based Stack
 
-</div>
+- **Locality**: Consecutive memory locations benefit CPU caching.
+- **Random Access**: Provides direct element access.
+- **Iterator Needs**: Preferable if indexing or iterators are required.
+- **Performance**: Slightly faster for top-element operations and potentially better for time-sensitive tasks due to caching.
+- **Push**: $O(1)$ on average; resizing might cause occasional $O(n)$.
 
-<div>
+#### Linked List Stack
 
-### Answer:
+- **Memory Efficiency**: Better suited for fluctuating sizes and limited memory scenarios.
+- **Resizing Overhead**: No resizing overheads.
+- **Pointer Overhead**: Requires extra memory for storing pointers.
 
-<div class="answer">
+### Code Example: Array-Based Stack
 
-<div>
+Here is the Python code:
 
-<div>
+```python
+class ArrayBasedStack:
+    def __init__(self):
+        self.stack = []
+    def push(self, item):
+        self.stack.append(item)
+    def pop(self):
+        return self.stack.pop() if self.stack else None
+```
 
-<div class="AnswerBody">
+### Code Example: Linked List Stack
 
-*   A **singly linked list**
+Here is the Python code:
 
-*   A **doubly linked list** is a list that has two references, one to the next node and another to previous node.
+```python
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+class LinkedListStack:
+    def __init__(self):
+        self.head = None
+    def push(self, item):
+        new_node = Node(item)
+        new_node.next = self.head
+        self.head = new_node
+    def pop(self):
+        if self.head:
+            temp = self.head
+            self.head = self.head.next
+            return temp.data
+        return None
+```
 
-*   A **multiply linked list** - each node contains two or more link fields, each field being used to connect the same set of data records in a different order of same set(e.g., by name, by department, by date of birth, etc.).
-*   A **circular linked list** - where last node of the list points back to the first node (or the head) of the list.
+---
 
-</div>
+## 🔹 6. When is a _Circular Linked List_ useful?
 
-</div>
+### Answer
 
-<div class="row my-2">
+A **circular Linked List** is a specific type of linked list where the tail node is intentionally connected back to the head node to form a closed loop.
 
-<div><span>_Source:_ <span>[www.cs.cmu.edu](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html "What are some types of Linked List? Interview Questions Source To Answer")</span></span>   </div>
+![Circular Linked List](https://firebasestorage.googleapis.com/v0/b/dev-stack-app.appspot.com/o/linked-lists%2Fcircular-linked-list.svg?alt=media&token=b3b96bc7-3b16-4d07-978f-e4774a048ee1)
 
-</div>
+### Common Use Cases
 
-</div>
+- **Emulating Circular Structures**: Useful for representing naturally circular data like polygon vertices, buffer pools, or round-robin scheduling in operating systems.
+  
+- **Queue Efficiency**: Accessing the front and rear elements in constant time, improving queue implementations.
 
-</div>
+- **Algorithmic Simplifications**: Enables easier data manipulations like list splitting and concatenation in constant time.
 
-</div>
+### Code Example: Queue Efficiency
 
-</div>
+Here is the Python code:
 
-<div data-v-5e9078c0="" class="unit">
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-<div>
+class CircularQueue:
+    def __init__(self):
+        self.front = self.rear = None
 
-## 🔹 6\. What is time complexity of Linked List operations?
+    def enqueue(self, data):
+        new_node = Node(data)
+        if self.rear:
+            self.rear.next, self.rear = new_node, new_node
+        else:
+            self.front = self.rear = new_node
+        self.rear.next = self.front
 
-</div>
+    def dequeue(self):
+        if not self.front: return None
+        if self.front == self.rear: self.front = self.rear = None
+        else: self.front = self.front.next; self.rear.next = self.front
+        return self.front.data if self.front else None
 
-<div>
+# Example usage:
+cq = CircularQueue()
+cq.enqueue(1); cq.enqueue(2); cq.enqueue(3)
+print(cq.dequeue(), cq.dequeue(), cq.dequeue(), cq.dequeue())
+```
 
-### Answer:
+---
 
-<div class="answer">
+## 🔹 7. Why is _Merge Sort_ preferred over _QuickSort_ for sorting _Linked Lists_?
 
-<div>
+### Answer
 
-<div>
+While both **QuickSort** and **MergeSort** are powerful sorting algorithms, MergeSort is often favored for linked lists for a variety of reasons, including its stability and optimized disk I/O operations.
 
-<div class="AnswerBody">
+### Advantages of MergeSort for Linked Lists
 
-*   A linked list can typically only be accessed via its head node. From there you can only traverse from node to node until you reach the node you seek. Thus **access is `_O_(_n_)`**.
-*   Searching for a given value in a linked list similarly requires traversing all the elements until you find that value. Thus **search is `_O_(_n_)`**.
-*   Inserting into a linked list requires re-pointing the previous node (the node before the insertion point) to the inserted node, and pointing the newly-inserted node to the next node. Thus **insertion is `_O_(_1_)`**.
-*   Deleting from a linked list requires re-pointing the previous node (the node before the deleted node) to the next node (the node after the deleted node). Thus **deletion is `_O_(_1_)`**.
+- **No Need for Random Access**: Unlike QuickSort, which benefits from direct access to elements for efficient partitioning, MergeSort doesn't require random access, making it ideal for linked lists.
+  
+- **Cache Efficiency**: MergeSort sequentially accesses elements, optimizing CPU cache usage, especially with large data sets.
 
-</div>
+- **Optimized Disk Operations**: MergeSort performs fewer disk I/O operations when sorting data that doesn't fit in memory, outperforming QuickSort in such scenarios.
 
-</div>
+### Code Example: MergeSort on Linked List
 
-<div class="row my-2">
+Here is the Python code:
 
-<div><span>_Source:_ <span>[github.com](https://github.com/tim-hr/stuff/wiki/Time-complexity:-linked-lists "What is time complexity of Linked List operations? Interview Questions Source To Answer")</span></span>   </div>
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-</div>
+def merge_sort(head):
+    if not head or not head.next:
+        return head
+    
+    mid = get_middle(head)
+    next_to_mid = mid.next
+    mid.next = None
+    
+    left = merge_sort(head)
+    right = merge_sort(next_to_mid)
+    
+    return merge(left, right)
 
-</div>
+def get_middle(head):
+    slow, fast = head, head
+    while fast.next and fast.next.next:
+        slow, fast = slow.next, fast.next.next
+    return slow
 
-</div>
+def merge(left, right):
+    dummy = Node(0)
+    curr = dummy
+    
+    while left and right:
+        if left.data < right.data:
+            curr.next, left = left, left.next
+        else:
+            curr.next, right = right, right.next
+        curr = curr.next
+    
+    curr.next = left or right
+    return dummy.next
+```
 
-</div>
+---
 
-</div>
+## 🔹 8. Is it possible to _Traverse a Linked List_ in _O(n1/2)_? (Jump Pointers).
 
-<div data-v-5e9078c0="" class="unit">
+### Answer
 
-<div>
+While it may not be possible to **traverse a linked list** in better than $O(n)$ time complexity in the strictest sense, there are techniques that can make the traversal process more efficient in certain contexts.
 
-## 🔹 7\. Under what circumstances are Linked Lists useful?
+In particular, let's explore the idea of "**Jump Pointers**" or "**Square Root Jumps**" which allows you to traverse a linked list in $O(\sqrt{n})$ time complexity.
 
-</div>
+### What Are Jump Pointers?
 
-<div>
+**Jump Pointers** allow for quicker traversal by "jumping" over a fixed number of nodes $k$ during each step. This reduces the total number of nodes visited, thereby improving the time complexity.
 
-### Answer:
+For instance, when $k = \sqrt{n}$, the traversal time complexity drops to $O(\sqrt{n})$.
 
-<div class="answer">
+### Code Example: Jump Pointers
 
-<div>
+Here is the Python code:
 
-<div>
+```python
+# Node definition
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
 
-<div class="AnswerBody">
+# LinkedList definition
+class LinkedList:
+    def __init__(self):
+        self.head = None
 
-Linked lists are very useful when you need :
+    # Add node to end
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
 
-*   to do a lot of insertions and removals, but not too much searching, on a list of arbitrary (unknown at compile-time) length.
-*   splitting and joining (bidirectionally-linked) lists is very efficient.
-*   You can also combine linked lists - e.g. tree structures can be implemented as "vertical" linked lists (parent/child relationships) connecting together horizontal linked lists (siblings).
+    # Traverse using Jump Pointers
+    def jump_traverse(self, jump_size):
+        current = self.head
+        while current:
+            print(current.data)
+            for _ in range(jump_size):
+                if not current:
+                    return
+                current = current.next
 
-Using an array based list for these purposes has severe limitations:
+# Create linked list and populate it
+llist = LinkedList()
+for i in range(1, 11):
+    llist.append(i)
 
-*   Adding a new item means the array must be reallocated (or you must allocate more space than you need to allow for future growth and reduce the number of reallocations)
-*   Removing items leaves wasted space or requires a reallocation
-*   inserting items anywhere except the end involves (possibly reallocating and) copying lots of the data up one position
+# Traverse using Jump Pointers
+print("Jump Pointer Traversal:")
+llist.jump_traverse(int(10**0.5))
+```
 
-</div>
+---
 
-</div>
+## 🔹 9. How to apply _Binary Search_ in _O(log n)_ on a _Sorted Linked List_? (Skip Lists).
 
-<div class="row my-2">
+### Answer
 
-<div><span>_Source:_ <span>[stackoverflow.com](https://stackoverflow.com/questions/2429217/under-what-circumstances-are-linked-lists-useful "Under what circumstances are Linked Lists useful? Interview Questions Source To Answer")</span></span>   </div>
+While **Binary Search** boasts a time complexity of $O(\log n)$, applying it to a singly linked list is less straightforward due to the list's linear nature and $O(n)$ access time. However, **Skip Lists** offer a clever workaround to achieve sub-linear search times in linked lists.
 
-</div>
+### Why Traditional Binary Search Falls Short in Linked Lists
 
-</div>
+In a **singly linked list**, random access to elements is not possible. To reach the $k$-th element, you have to traverse $k-1$ preceding nodes. Therefore, the act of **accessing a middle element** during binary search incurs a time complexity of $O(n)$.
 
-</div>
+### Skip Lists: A Solution for Sub-linear Search
 
-</div>
+Skip Lists augment sorted linked lists with multiple layers of '**express lanes**', allowing you to leapfrog over sections of the list. Each layer contains a subset of the elements from the layer below it, enabling faster search.
 
-</div>
+![Skip List Example](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Skip_list.svg/1920px-Skip_list.svg.png)
 
-<div data-v-5e9078c0="" class="unit">
+By starting at the topmost layer and working downwards, you can **reduce the search space** at each step. This results in an average time complexity of $O(\log n)$ for search operations.
 
-<div>
+### Code Example: Visualizing a Skip List
 
-## 🔹 8\. How to implement Linked List Using Stack?
+Here is the Python code:
 
-</div>
+```python
+# Define a node for the Skip List
+class SkipNode:
+    def __init__(self, value):
+        self.value = value
+        self.next = []
 
-<div>
+# Initialize a Skip List
+class SkipList:
+    def __init__(self):
+        self.head = SkipNode(float('-inf'))  # Initialize with the smallest possible value
+        self.levels = 1  # Start with a single level
+```
 
-### Answer:
+---
+## 🔹 10. Is it possible to do _Binary Search_ on a _Doubly Linked List_ in _O(n)_ time?
 
-<div class="answer">
+### Answer
 
-<div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div>
+---
 
-<div class="AnswerBody">
+## 🔹 11. Explain _Floyd's Cycle Detection Algorithm_.
 
-You can simulate a linked list by using two stacks. One stack is the "list," and the other is used for temporary storage.
+### Answer
 
-*   To **add** an item at the head, simply push the item onto the stack.
-*   To **remove** from the head, pop from the stack.
-*   To **insert** into the middle somewhere, pop items from the "list" stack and push them onto the temporary stack until you get to your insertion point. Push the new item onto the "list" stack, then pop from the temporary stack and push back onto the "list" stack. Deletion of an arbitrary node is similar.
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-This isn't terribly efficient, by the way, but it would in fact work.
+---
 
-</div>
+## 🔹 12. Is there an algorithm _Better Than Floyd's_ for _Cycle Detection_ in linked lists?
 
-</div>
+### Answer
 
-<div class="row my-2">
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div><span>_Source:_ <span>[stackoverflow.com](https://stackoverflow.com/questions/36150565/how-to-implement-linked-list-using-stack "How to implement Linked List Using Stack? Interview Questions Source To Answer")</span></span>   </div>
+---
 
-</div>
+## 🔹 13. Implement a _Linked List_ using _Stack_.
 
-</div>
+### Answer
 
-</div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-</div>
+---
 
-</div>
+## 🔹 14. Reverse a _Singly Linked List_ using only _Two Pointers_.
 
-<div data-v-5e9078c0="" class="unit">
+### Answer
 
-<div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-## 🔹 9\. How to reverse a singly Linked List using only two pointers?
+---
 
-</div>
+## 🔹 15. Convert a _Singly Linked List_ to a _Circular Linked List_.
 
-<div>
+### Answer
 
-### Answer:
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div class="answer">
+---
 
-<div>
+## 🔹 16. Convert a _Singly Linked List_ to a _Doubly Linked List_.
 
-<div>
+### Answer
 
-<div class="AnswerBody">
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-Nothing faster than `_O_(_n_)` can be done. You need to traverse the list and alter pointers on every node, so time will be proportional to the number of elements.
+---
 
-</div>
+## 🔹 17. _Insert_ an item in a _Sorted Linked List_, while maintaining order.
 
-</div>
+### Answer
 
-<div style="font-size: 14px;">
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div class="mb-3 mt-2"><span class="h5">Implementation</span></div>
+---
 
-<div>
+## 🔹 18. Detect if a _List_ is _Cyclic_ using _Hash Table_.
 
-<nav class="mdc-tab-bar">
+### Answer
 
-<div class="mdc-tab-scroller">
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+---
 
-<div class="mdc-tab-scroller__scroll-content"><button class="mdc-ripple-upgraded mdc-ripple-upgraded--background-focused mdc-tab mdc-tab--min-width mdc-tab--active" aria-selected="true" tabindex="0">
+## 🔹 19. Merge two sorted Singly Linked Lists without creating new nodes.
 
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Java</span> <span class="shadow-text lang-badge java">Java</span></span></div>
+### Answer
 
-<span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button></div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-</div>
+---
 
-</div>
+## 🔹 20. _Find the N-th element_ from the end of a _Singly Linked List_.
 
-</nav>
+### Answer
 
-</div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div class="mt-2">
+---
 
-<div class="AnswerBody">
+## 🔹 21. Implement _Doubly Linked List_ using _Stacks_ with minimal complexity.
 
-    public void reverse(Node head) {
-        Node curr = head, prev = null;
+### Answer
 
-        while (head.next != null) {
-            head = head.next; // move the head to next node
-            curr.next = prev; // break the link to the next node and assign it to previous
-            prev = curr;      // we are done with previous, move it to next node
-            curr = head;      // current moves along with head
-        }
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-        head.next = prev;     //for last node
-    }
+---
 
-</div>
+## 🔹 22. Convert a _Binary Tree_ into a _Doubly Linked List_.
 
-</div>
+### Answer
 
-</div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div class="row my-2">
+---
 
-<div><span>_Source:_ <span>[stackoverflow.com](https://stackoverflow.com/questions/1801549/how-to-reverse-a-singly-linked-list-using-only-two-pointers "How to reverse a singly Linked List using only two pointers? Interview Questions Source To Answer")</span></span>   </div>
+## 🔹 23. Remove _Duplicates_ from an _Unsorted Linked List_.
 
-</div>
+### Answer
 
-</div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-</div>
+---
 
-</div>
+## 🔹 24. Find _Common Elements_ in two given _Linked Lists_ and return them as a new _Linked List_.
 
-</div>
+### Answer
 
-<div data-v-5e9078c0="" class="unit">
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div>
+---
 
-## 🔹 10\. What is complexity of push and pop for a Stack implemented using a LinkedList?
+## 🔹 25. _Split_ the _Linked List_ into _k_ consecutive parts.
 
-</div>
+### Answer
 
-<div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-### Answer:
+---
 
-<div class="answer">
+## 🔹 26. _Sum_ two numbers represented as _Linked Lists_.
 
-<div>
+### Answer
 
-<div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-<div class="AnswerBody">
+---
 
-`_O_(_1_)`. Note, you don't have to insert at the end of the list. If you insert at the front of a (singly-linked) list, they are both `O(1)`.
+## 🔹 27. _Reverse_ a _Linked List_ recursively.
 
-Stack contains 1,2,3:
+### Answer
 
-    [1]->[2]->[3]
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-Push 5:
+---
 
-    [5]->[1]->[2]->[3]
+## 🔹 28. Find a _Merge Point_ (Intersection) of two _Linked Lists_.
 
-Pop:
+### Answer
 
-    [1]->[2]->[3] // returning 5
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-</div>
+---
 
-</div>
+## 🔹 29. Given a _Singly Linked List_, determine if it is a _Palindrome_.
 
-<div class="row my-2">
+### Answer
 
-<div><span>_Source:_ <span>[stackoverflow.com](https://stackoverflow.com/questions/6537150/time-complexity-of-a-stack-adt-implemented-using-a-linked-list#:~:text=For%20a%20doubly%20linked%20list,operations%20of%20enqueue%20and%20dequeue. "What is complexity of `push` and `pop` for a Stack implemented using a LinkedList? Interview Questions Source To Answer")</span></span>   </div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-</div>
+---
 
-</div>
+## 🔹 30. Find the length of a _Linked List_ that contains a _Cycle_.
 
-</div>
+### Answer
 
-</div>
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-</div>
+---
 
-<div data-v-5e9078c0="" class="unit">
+## 🔹 31. _Duplicate_ a _Linked List_ with _Random Pointers_ using _O(1)_ space.
 
-<div>
+### Answer
 
-## 🔹 11\. Detect if a List is Cyclic using Hash Table
+👉🏼 Check out all 31 answers here: [Devinterview.io - Linked Lists](https://devinterview.io/data/linkedLists-interview-questions)
 
-</div>
+---
 
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div>
-
-<div class="AnswerBody">
-
-To detect if a list is cyclic, we can check whether a node had been visited before. A natural way is to use a hash table.
-
-**Algorithm**
-
-We go through each node one by one and record each node's reference (or memory address) in a hash table. If the current node is `null`, we have reached the end of the list and it must not be cyclic. If current node’s reference is in the hash table, then return true.
-
-</div>
-
-</div>
-
-<div>
-
-<div class="mb-2 mt-2"><span class="h5">Complexity Analysis</span></div>
-
-<div class="hide-small">
-
-<div class="row no-gutters my-2 align-items-end">
-
-<div class="col font-weight-bold text-muted">Time:</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
-
-<div class="complexity amazing first p-1 justify-content-center shadow-text">O(1)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
-
-</div>
-
-<div class="col text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text selected-complexity effect7">O(n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
-
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Quadratic</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted">Factorial</div>
-
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hide-small">
-
-<div class="row no-gutters my-2 align-items-end">
-
-<div class="col font-weight-bold text-muted">Space:</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Constant</div>
-
-<div class="complexity amazing first p-1 justify-content-center shadow-text">O(1)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Dbl. Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="text-muted font-weight-bold justify-content-center">Logarithmic</div>
-
-<div class="complexity good p-1 justify-content-center shadow-text">O(log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Square Root</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text ">O(√n)</div>
-
-</div>
-
-<div class="col text-center">
-
-<div class="font-weight-bold  text-muted justify-content-center">Linear</div>
-
-<div class="complexity fair p-1 justify-content-center shadow-text selected-complexity effect7">O(n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted justify-content-center">Linearithmic</div>
-
-<div class="complexity bad p-1 justify-content-center shadow-text ">O(n log n)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Quadratic</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_n_<sup>2</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold   text-muted justify-content-center">Exponential</div>
-
-<div class="complexity terrible p-1 justify-content-center shadow-text ">_O_(_2_<sup>n</sup>)</div>
-
-</div>
-
-<div class="col disable text-center">
-
-<div class="font-weight-bold text-muted">Factorial</div>
-
-<div class="complexity terrible last p-1 justify-content-center shadow-text ">O(n!)</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hide-large">
-
-**Time:** <mark>O(n)</mark>
-
-**Space:** <mark>O(n)</mark>
-
-</div>
-
-<div class="mt-3">
-
-<div>
-
-<div class="AnswerBody">
-
-*   Time complexity : `_O_(_n_)` . We visit each of the `n` elements in the list at most once. Adding a node to the hash table costs only `_O_(_1_)` time.
-*   Space complexity: `_O_(_n_)` . The space depends on the number of elements added to the hash table, which contains at most `n` elements.
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div style="font-size: 14px;">
-
-<div class="mb-3 mt-2"><span class="h5">Implementation</span></div>
-
-<div>
-
-<nav class="mdc-tab-bar">
-
-<div class="mdc-tab-scroller">
-
-<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-
-<div class="mdc-tab-scroller__scroll-content"><button class="mdc-ripple-upgraded mdc-ripple-upgraded--background-focused mdc-tab mdc-tab--min-width mdc-tab--active" aria-selected="true" tabindex="0">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Java</span> <span class="shadow-text lang-badge java">Java</span></span></div>
-
-<span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button></div>
-
-</div>
-
-</div>
-
-</nav>
-
-</div>
-
-<div class="mt-2">
-
-<div class="AnswerBody">
-
-    public boolean hasCycle(ListNode head) {
-        Set<ListNode> nodesSeen = new HashSet<>();
-        while (head != null) {
-            if (nodesSeen.contains(head)) {
-                return true;
-            } else {
-                nodesSeen.add(head);
-            }
-            head = head.next;
-        }
-        return false;
-    }
-
-</div>
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>_Source:_ <span>[leetcode.com](https://leetcode.com/problems/linked-list-cycle/solution/ "Detect if a List is Cyclic using Hash Table Interview Questions Source To Answer")</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 12\. Convert a Singly Linked List to Circular Linked List
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div>
-
-<div class="AnswerBody">
-
-To convert a singly linked list to circular linked list, we will set next pointer of tail node to head pointer.
-
-*   Create a copy of head pointer, let's say `temp`.
-*   Using a loop, traverse linked list till tail node (last node) using temp pointer.
-*   Now set the next pointer of tail node to head node. `temp\->next = head`
-
-</div>
-
-</div>
-
-<div style="font-size: 14px;">
-
-<div class="mb-3 mt-2"><span class="h5">Implementation</span></div>
-
-<div>
-
-<nav class="mdc-tab-bar">
-
-<div class="mdc-tab-scroller">
-
-<div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
-
-<div class="mdc-tab-scroller__scroll-content"><button class="mdc-ripple-upgraded mdc-ripple-upgraded--background-focused mdc-tab mdc-tab--min-width mdc-tab--active" aria-selected="true" tabindex="0">
-
-<div class="mdc-tab__content"><span class="mdc-tab__text-label"><span>Python</span> <span class="shadow-text lang-badge py">PY</span></span></div>
-
-<span class="mdc-tab-indicator mdc-tab-indicator--active"><span aria-hidden="true" class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span></span></button></div>
-
-</div>
-
-</div>
-
-</nav>
-
-</div>
-
-<div class="mt-2">
-
-<div class="AnswerBody">
-
-    def convertTocircular(head):
-        # declare a node variable
-        # start and assign head
-        # node into start node.
-        start = head
-
-        # check that
-        while head.next
-        # not equal to null then head
-        # points to next node.
-        while(head.next is not None):
-          head = head.next
-
-        #
-        if head.next points to null
-        # then start assign to the
-        # head.next node.
-        head.next = start
-        return start
-
-</div>
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>_Source:_ <span>[www.techcrashcourse.com](https://www.techcrashcourse.com/2016/06/program-convert-singly-linked-list-to-circular-linked-list.html "Convert a Singly Linked List to Circular Linked List Interview Questions Source To Answer")</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 14\. Convert a Single Linked List to a Double Linked List
-
-</div>
-
-<div>
-
-### Answer:
-
-<div class="answer">
-
-<div>
-
-<div>
-
-<div class="AnswerBody">
-
-A doubly linked list is simply a linked list where every element has both next and prev mebers, pointing at the elements before and after it, not just the one after it in a single linked list.
-
-so to convert your list to a doubly linked list, just change your node to be:
-
-    private class Node
-    {
-        Picture data;
-        Node pNext;
-        Node pPrev;
-    };
-
-and when iterating the list, on each new node add a reference to the previous node.
-
-</div>
-
-</div>
-
-<div class="row my-2">
-
-<div><span>_Source:_ <span>[stackoverflow.com](https://stackoverflow.com/questions/9542154/converting-a-single-linked-list-to-a-double-linked-list/9542187#9542187 "Convert a Single Linked List to a Double Linked List Interview Questions Source To Answer")</span></span>   </div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div data-v-5e9078c0="" class="unit">
-
-<div>
-
-## 🔹 15\. When to use a Linked List over an Array/Array List?
-
-</div>
-
-<div>👉🏼 Check [all 43 answers](https://devinterview.io/data/linkedLists-interview-questions)</div>
-
-</div>
-
-Thanks 🙌 for reading and good luck on your next tech interview!  
-Explore 3800+ dev interview question here 👉 [Devinterview.io](https://devinterview.io/)</div>
